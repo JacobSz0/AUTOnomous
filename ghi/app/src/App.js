@@ -47,8 +47,6 @@ function App(props) {
             <Route path="customer-list" element={<CustomerList />} />
             <Route path="sales-list" element={<SalesList />} />
           </Route>
-        </Routes>
-        <Routes>
           <Route path="/" element={<MainPage />} />
         </Routes>
       </div>

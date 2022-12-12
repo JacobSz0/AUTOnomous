@@ -13,6 +13,11 @@ import SalesList from './Sales/SalesList'
 import SalesPersonForm from './Sales/SalesPersonForm'
 import CustomerForm from './Sales/CustomerForm'
 import SalesForm from './Sales/SalesForm'
+import TechniciansForm from './Service/TechniciansForm';
+import TechniciansList from './Service/TechniciansList';
+import AppointmentsList from './Service/AppointmentsList';
+import AppointmentsForm from './Service/AppointmentsForm';
+
 
 function App(props) {
   return (
@@ -20,6 +25,12 @@ function App(props) {
       <Nav />
       <div className="container">
       <Routes>
+        <Route path="service">
+          <Route path="technicians-list" element={<TechniciansList />} />
+          <Route path="technicians-form" element={<TechniciansForm />} />
+          <Route path="appointments-list" element={<AppointmentsList />} />
+          <Route path="appointmens-form" element={<AppointmentsForm />} />
+        </Route>
         <Route path="inventory">
           <Route path="manufacturers-list" element={<ManufacturersList2 />} />
           <Route path="vehicle-model-list" element={<VehicleModelList2 />} />

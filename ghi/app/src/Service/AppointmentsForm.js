@@ -40,9 +40,9 @@ async handleSubmit(event) {
             vin:'', // come back
             customer:'',
             date:'',
-            technician:''
-            reason:''
-            in_inventory:''
+            technician:'',
+            reason:'',
+            in_inventory:'',
           };
           this.setState(cleared);
         }
@@ -146,4 +146,4 @@ async handleSubmit(event) {
         );
     }
 }
-export default SalesForm;
+export default AppointmentsForm;

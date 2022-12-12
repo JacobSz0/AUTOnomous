@@ -52,6 +52,28 @@ function Nav() {
           Sales List
         </NavLink>
         </div>
+
+        <div>
+        <NavLink className="nav-link" aria-current="page" to="/service/technicians-list">
+          List Technicians
+        </NavLink>
+        <NavLink className="nav-link" aria-current="page" to="/service/appointments-list">
+          List Appointments
+        </NavLink>
+
+        </div>
+
+        <div>
+        <NavLink className="nav-link" aria-current="page" to="/service/technicians-form">
+          Add Technician
+        </NavLink>
+        <NavLink className="nav-link" aria-current="page" to="/service/appointments-form">
+          Add Appointment
+        </NavLink>
+
+        </div>
+
+
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           </ul>

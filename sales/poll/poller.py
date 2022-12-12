@@ -19,7 +19,7 @@ def get_auto():
     for auto in content["autos"]:
         AutoVO.objects.update_or_create(
             import_href=auto["href"],
-            defaults={"color":auto["color"]},
+            defaults={"vin":auto["vin"]},
         )
 
 

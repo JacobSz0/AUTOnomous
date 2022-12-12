@@ -3,7 +3,7 @@ from django.urls import reverse
 
 class AutoVO(models.Model):
     import_href = models.CharField(max_length=200, unique=True)
-    color = models.CharField(max_length=200)
+    vin = models.CharField(max_length=17, unique=True)
 
 
 class SalesPerson(models.Model):

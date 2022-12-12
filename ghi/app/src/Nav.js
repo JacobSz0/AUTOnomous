@@ -8,7 +8,7 @@ function Nav() {
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div>
+        <div style={{backgroundColor: "#39005E"}} >
         <NavLink className="nav-link" aria-current="page" to="/inventory/manufacturers-list">
           Manufacturers List
         </NavLink>
@@ -19,7 +19,7 @@ function Nav() {
           Auto List
         </NavLink>
         </div>
-        <div>
+        <div style={{backgroundColor: "#39005E"}} >
         <NavLink className="nav-link" aria-current="page" to="/inventory/manufacturer-form">
           Manufacturer Form
         </NavLink>
@@ -30,7 +30,7 @@ function Nav() {
           AutoForm
         </NavLink>
         </div>
-        <div>
+        <div style={{backgroundColor: "#05045F"}} >
         <NavLink className="nav-link" aria-current="page" to="/sales/sales-person-form">
           Sales Person Form
         </NavLink>
@@ -41,7 +41,7 @@ function Nav() {
           Sales Form
         </NavLink>
         </div>
-        <div>
+        <div style={{backgroundColor: "#05045F"}} >
         <NavLink className="nav-link" aria-current="page" to="/sales/sales-person-list">
           Sales Person List
         </NavLink>
@@ -53,7 +53,7 @@ function Nav() {
         </NavLink>
         </div>
 
-        <div>
+        <div style={{backgroundColor: "#0081AE"}} >
         <NavLink className="nav-link" aria-current="page" to="/service/technicians-list">
           List Technicians
         </NavLink>
@@ -63,7 +63,7 @@ function Nav() {
 
         </div>
 
-        <div>
+        <div style={{backgroundColor: "#0081AE"}} >
         <NavLink className="nav-link" aria-current="page" to="/service/technicians-form">
           Add Technician
         </NavLink>

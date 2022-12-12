@@ -24,8 +24,10 @@ class SalesList extends React.Component {
                     <table className="table table-striped">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th></th>
+                                <th>Price</th>
+                                <th>Customer</th>
+                                <th>Sales Person</th>
+                                <th>Auto VIN</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,6 +35,9 @@ class SalesList extends React.Component {
                                 return (
                                     <tr key={i.id}>
                                         <td>{ i.price }</td>
+                                        <td>{ i.customer }</td>
+                                        <td>{ i.sales_person }</td>
+                                        <td>{ i.auto }</td>
                                     </tr>
                                 );
                             })}

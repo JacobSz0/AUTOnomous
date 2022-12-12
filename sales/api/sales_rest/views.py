@@ -21,7 +21,7 @@ class CustomerListEncoder(ModelEncoder):
 
 class SaleListEncoder(ModelEncoder):
     model = Sale
-    properties = ["price", "id"]
+    properties = ["price", "id", "sales_person", "auto", "customer"]
 
     def get_extra_data(self, o):
         return {"auto": o.auto.vin, "sales_person": o.sales_person.name, "customer": o.customer.name}

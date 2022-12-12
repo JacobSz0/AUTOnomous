@@ -23,7 +23,6 @@ async handleSubmit(event) {
     delete data.sales_persons
     delete data.autos;
     delete data.customers;
-    console.log(data)
     const NewUrl = 'http://localhost:8090/api/sales_rest/sales/';
     const fetchConfig = {
       method: "post",
@@ -85,7 +84,6 @@ async handleSubmit(event) {
       }
 
     render() {
-      console.log(this.state)
         return (
         <div className="row">
             <div className="offset-3 col-6">

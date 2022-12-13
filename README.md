@@ -34,6 +34,7 @@ docker compose up
  ## Application Diagram
 
  Put image or link to application diagram here. Identify your VOs here in the diagram.
+ https://excalidraw.com/#json=AwB3bMUnrx9U4wX0pwLti,K48ZhQuDiJ9w0dALFKrsnA
 
 
  ## Services
@@ -63,6 +64,24 @@ Inventory API links:
   "vin": "1C3C2AN120174",
   "model_id": 1
 }
+
+Service API inks:
+
+1. Technicians list/create http://localhost:8080/api/appointments/
+{
+  "name": "jakmsdses",
+	"employee_number": "7"
+}
+
+2 Appointments list/create http://localhost:8080/api/appointments/
+		{
+			"vin":"xxx",
+			"customer_name": "betetetob",
+			"date": "2012-04-23T18:25:43.511Z",
+			"technician_name": 1,
+			"reason":"you suck",
+			"in_inventory":true
+		}
 
 
 Sales API links:
@@ -94,4 +113,6 @@ Sales API links:
  ## Value Objects
 
  If you didn't identify the VOs in your diagram, then identify them here.
- Fickst
+
+AutoVO in sales models
+Inventory_vinVO in service models

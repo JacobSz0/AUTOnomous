@@ -52,6 +52,12 @@ function Nav() {
           Sales List
         </NavLink>
         </div>
+        <div style={{backgroundColor: "#05045F"}} >
+        <NavLink className="nav-link" aria-current="page" to="/sales/sales-list-by-id">
+          Sales List by Employee ID (Almost)
+        </NavLink>
+        </div>
+
 
         <div style={{backgroundColor: "#0081AE"}} >
         <NavLink className="nav-link" aria-current="page" to="/service/technicians-list">

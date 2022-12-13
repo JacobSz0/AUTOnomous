@@ -90,7 +90,6 @@ async handleSubmit(event) {
       }
 
     render() {
-      console.log(this.state.technicians)
         return (
         <div className="row">
             <div className="offset-3 col-6">

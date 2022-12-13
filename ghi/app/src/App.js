@@ -10,6 +10,7 @@ import VehicleModelList2 from './Inventory/VehicleModelList2'
 import SalesPersonList from './Sales/SalesPersonList'
 import CustomerList from './Sales/CustomerList'
 import SalesList from './Sales/SalesList'
+import SalesByID from './Sales/SalesByID'
 import SalesPersonForm from './Sales/SalesPersonForm'
 import CustomerForm from './Sales/CustomerForm'
 import SalesForm from './Sales/SalesForm'
@@ -46,6 +47,7 @@ function App(props) {
             <Route path="sales-person-list" element={<SalesPersonList />} />
             <Route path="customer-list" element={<CustomerList />} />
             <Route path="sales-list" element={<SalesList />} />
+            <Route path="sales-list-by-id" element={<SalesByID />} />
           </Route>
           <Route path="/" element={<MainPage />} />
         </Routes>

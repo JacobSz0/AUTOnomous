@@ -63,14 +63,6 @@ def api_list_customer(request):
         )
 
 
-@require_http_methods(["GET"])
-def api_list_AutoVO(request):
-    Auto=AutoVO.objects.all()
-    return JsonResponse(
-        {"Auto": Auto},
-        encoder=AutoVODetailEncoder,
-    )
-
 @require_http_methods(["GET", "POST"])
 def api_list_sales(request, auto_vo_id=None):
     if request.method == "GET":
@@ -106,3 +98,15 @@ def api_list_sales(request, auto_vo_id=None):
             encoder=SaleListEncoder,
             safe=False,
         )
+
+@require_http_methods(["POST"])
+def sales_by_id(request, auto_vo_id=None):
+    content = json.loads(request.body)
+    if auto_vo_id is not None:
+        sale = Sale.objects.filter(auto=auto_vo_id)
+    else:
+        sale=Sale.objects.filter(sales_person=content["sales_person"])
+    return JsonResponse(
+        {"sale": sale},
+        encoder=SaleListEncoder,
+    )

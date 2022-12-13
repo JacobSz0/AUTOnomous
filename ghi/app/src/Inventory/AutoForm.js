@@ -20,8 +20,6 @@ class AutoForm extends React.Component {
 async handleSubmit(event) {
     event.preventDefault();
     const data = {...this.state};
-    data.model_id = data.model;
-    delete data.model
     delete data.models
 
     const AutoUrl = 'http://localhost:8100/api/automobiles/';
@@ -73,26 +71,33 @@ async handleSubmit(event) {
       }
 
     render() {
+      console.log(this.state.models)
+
         return (
         <div className="row">
             <div className="offset-3 col-6">
             <div className="shadow p-4 mt-4">
                 <h1>Register New Car</h1>
+
                 <form onSubmit={this.handleSubmit} id="create-auto-form">
                 <div className="form-floating mb-3">
-                    <input value={this.state.color} onChange={this.handleColorChange} placeholder="Name" required type="text" name="color" id="color" className="form-control"/>
+                    <input value={this.state.color} onChange={this.handleColorChange}
+                     placeholder="Name" required type="text" name="color" id="color" className="form-control"/>
                     <label htmlFor="color">Color</label>
                 </div>
                 <div className="form-floating mb-3">
-                    <input value={this.state.year} onChange={this.handleYearChange} placeholder="Year" required type="text" name="year" id="year" className="form-control"/>
+                    <input value={this.state.year} onChange={this.handleYearChange}
+                     placeholder="Year" required type="text" name="year" id="year" className="form-control"/>
                     <label htmlFor="year">Year</label>
                 </div>
                 <div className="form-floating mb-3">
-                    <input value={this.state.vin} onChange={this.handleVINChange} placeholder="VIN" required type="text" name="vin" id="vin" className="form-control"/>
+                    <input value={this.state.vin} onChange={this.handleVINChange}
+                     placeholder="VIN" required type="text" name="vin" id="vin" className="form-control"/>
                     <label htmlFor="vin">VIN</label>
                 </div>
                 <div className="mb-3">
-                <select value={this.state.model} onChange={this.handleModelChange} required name="model" id="model" className="form-select">
+                <select value={this.state.model} onChange={this.handleModelChange}
+                 required name="model" id="model" className="form-select">
                   <option value="">Choose a Model</option>
                   {this.state.models.map(model => {
                     return (

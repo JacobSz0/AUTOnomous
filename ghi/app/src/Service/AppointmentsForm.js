@@ -12,10 +12,11 @@ class AppointmentsForm extends React.Component {
         in_inventory:[],
     }
 
-    this.handleAutoChange = this.handleAutoChange.bind(this); // comeback
-    this.handleSalesPersonChange = this.handleSalesPersonChange.bind(this);
-    this.handleCustomerChange = this.handleCustomerChange.bind(this);
-    this.handlePriceChange = this.handlePriceChange.bind(this);
+    this.handleVinChange = this.handleVinChange.bind(this); // comeback
+    this.handleCustomer_NameChange = this.handleCustomer_NameChange.bind(this);
+    this.handleTechnician_NameChange = this.handleTechnician_NameChange.bind(this);
+    this.handleReasonChange = this.handleReasonChange.bind(this);
+    this.handleIn_InventoryChange = this.handleIn_InventoryChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 }
 
@@ -23,6 +24,10 @@ async handleSubmit(event) {
     event.preventDefault();
     const data = {...this.state}; // what does this do?
     delete data.technician_name;
+    delete data.customer_name;
+
+    delete data.in_inventory;
+
 
     const NewUrl = 'http://localhost:8080/api/appointments/';
     const fetchConfig = {
@@ -91,10 +96,41 @@ async handleSubmit(event) {
             <div className="offset-3 col-6">
             <div className="shadow p-4 mt-4">
                 <h1>Create New Appointment</h1>
+
                 <form onSubmit={this.handleSubmit} id="create-appointment-form">
+                <div className="form-floating mb-3">
+                    <input value={this.state.vin} onChange={this.handleVinChange}
+                     placeholder="VIN" required type="text" name="vin" id="vin" className="form-control"/>
+                    <label htmlFor="vin">VIN</label>
+                </div>
+
+                <div className="form-floating mb-3">
+                    <input value={this.state.customer} onChange={this.handleCustomer_NameChange}
+                     placeholder="customer_name" required type="text" name="customer_name" id="customer_name" className="form-control"/>
+                    <label htmlFor="customer_name">Customer Name</label>
+                </div>
+
+                <div className="form-floating mb-3">
+                    <input value={this.state.date} onChange={this.handleDateChange}
+                     placeholder="Date" required type="date" name="Date" id="Date" className="form-control"/>
+                    <label htmlFor="Date">Date</label>
+                </div>
+
 
                 <div className="mb-3">
-                  <select value={this.state.technician} onChange={this.handleTechnicianChange} required name="technician" id="technician" className="form-select">
+                   <select value={this.state.reason} onChange={this.handleReasonChange}
+                    required name="reason" id="reason" className="form-select">
+                      <option value="">Choose a Reason</option>
+                      <option value="Oil Change">"Oil Change"</option>
+                      <option value="Radiator Flush">"Radiator Flush"</option>
+                      <option value="40 point inspection">"40 point inspection"</option>
+                    </select>
+                </div>
+
+
+              <div className="mb-3">
+                  <select value={this.state.technician} onChange={this.handleTechnician_NameChange}
+                  required name="technician" id="technician" className="form-select">
                     <option value="">Choose a Technician</option>
                     {this.state.technician_name.map(technician => {
                       return (
@@ -106,37 +142,6 @@ async handleSubmit(event) {
                   </select>
                 </div>
 
-                <div className="form-floating mb-3">
-                    <input value={this.state.vin} onChange={this.handleVinChange} placeholder="vin" required type="text" name="vin" id="vin" className="form-control"/>
-                    <label htmlFor="price">Price</label>
-                </div>
-
-                <div className="form-floating mb-3">
-                    <input value={this.state.customer_name} onChange={this.handleCustomer_NameChange} placeholder="vin" required type="text" name="vin" id="vin" className="form-control"/>
-                    <label htmlFor="price">Price</label>
-                </div>
-
-
-
-                <div className="form-floating mb-3">
-                    <input value={this.state.date} onChange={this.handleDateChange} placeholder="vin" required type="text" name="vin" id="vin" className="form-control"/>
-                    <label htmlFor="price">Price</label>
-                </div>
-
-                <div className="form-floating mb-3">
-                    <input value={this.state.reason} onChange={this.handleReasonChange} placeholder="vin" required type="text" name="vin" id="vin" className="form-control"/>
-                    <label htmlFor="price">Price</label>
-                </div>
-
-                <div className="mb-3">
-                   <select value={this.state.reason} onChange={this.handleReasonChange}
-                    required name="reason" id="reason" className="form-control">
-                      <option value="">Choose a Reason</option>
-                      <option value="">"Oil Change"</option>
-                      <option value="">"Radiator Flush"</option>
-                      <option value="">"40 point inspection"</option>
-                    </select>
-                </div>
 
                 <button className="btn btn-primary">Create</button>
                 </form>

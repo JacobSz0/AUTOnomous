@@ -35,7 +35,7 @@ class AppointmentsListEncoder(ModelEncoder):
     ]
 
     def get_extra_data(self, o):
-        return {"technician_name": o.technician_name.id}
+        return {"technician_name": o.technician_name.name}
 
 
 # Create your views here.
@@ -99,4 +99,3 @@ def api_list_VINVO(request):
             {"vin":vin},
             encoder = Inventory_vinVOEncoder
         )
-

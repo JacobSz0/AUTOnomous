@@ -30,9 +30,9 @@ def api_automobiles(request):
                 encoder=AutomobileEncoder,
                 safe=False,
             )
-        except:
+        except Exception as e:
             response = JsonResponse(
-                {"message": "Could not create the automobile"}
+                {"message": f"Could not create the automobile: {str(e)}"}
             )
             response.status_code = 400
             return response

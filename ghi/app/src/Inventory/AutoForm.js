@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 class AutoForm extends React.Component {
   constructor(props) {
@@ -7,7 +7,10 @@ class AutoForm extends React.Component {
         color:'',
         year:'',
         vin:'',
-        models:[]
+        models:[],
+        option1:false,
+        option2:false,
+        option3:false
     }
 
     this.handleColorChange = this.handleColorChange.bind(this);
@@ -21,6 +24,9 @@ async handleSubmit(event) {
     event.preventDefault();
     const data = {...this.state};
     delete data.models
+    data.year=parseInt(data.year)
+    data.model_id=parseInt(data.model)
+    console.log(data)
 
     const AutoUrl = 'http://localhost:8100/api/automobiles/';
     const fetchConfig = {
@@ -37,7 +43,7 @@ async handleSubmit(event) {
             color:'',
             year:'',
             vin:'',
-            model:''
+            model:'',
           };
           this.setState(cleared);
         }
@@ -59,6 +65,7 @@ async handleSubmit(event) {
         const value = event.target.value;
         this.setState({model: value})
     }
+
     async componentDidMount() {
         const url = 'http://localhost:8100/api/models/';
 
